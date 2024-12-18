@@ -9,6 +9,18 @@ services:
       - logs:/logs
     environment:
       - PORT:3000
+      - MONGODB_URI:mongodb://mongo:27017/development
+
+  test:
+    build:
+      context: .
+      target: test
+    volumes:
+      - .:/server
+      - node_modules:/server/node_modules
+      - logs:/logs
+    environment:
+      - ENV=test
       - MONGODB_URI:mongodb://mongo:27017/test
 
   mongo:

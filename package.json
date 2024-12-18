@@ -17,7 +17,8 @@
     "eslint:fix": "npm run eslint -- --fix",
     "prettier:check": "prettier . --check",
     "prettier:write": "prettier . --write",
-    "test": "node --env-file=.env.test node_modules/jest/bin/jest.js --env=node"
+    "test": "node --env-file=.env.test node_modules/jest/bin/jest.js --env=node",
+    "docker:test": "docker compose run server npm run test"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
