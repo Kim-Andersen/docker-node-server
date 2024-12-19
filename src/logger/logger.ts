@@ -7,7 +7,7 @@ const filename = resolve(env.LOGS_DIR, `${env.ENV}.log`);
 const timestampFormat = 'DD-MM-YYYY HH:mm:ss:SSS';
 
 const transports: winston.transport[] = [
-  new winston.transports.File({ filename }),
+  new winston.transports.File({ filename })
 ];
 if (env.ENV === 'development') {
   transports.push(new winston.transports.Console());
@@ -21,8 +21,8 @@ const logger = winston.createLogger({
     timestamp({ format: timestampFormat }),
     printf(({ level, message, timestamp, ...metadata }) => {
       return `${timestamp} ${level}: ${message} ${Object.keys(metadata).length > 0 ? JSON.stringify(metadata) : ''}`;
-    }),
-  ),
+    })
+  )
 });
 
 // eslint-disable-next-line no-console

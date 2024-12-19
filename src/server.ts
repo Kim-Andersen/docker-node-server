@@ -18,7 +18,7 @@ logger.info('Starting server');
 await mongodb.connect(env.MONGODB_URI);
 
 const server = app.listen(env.PORT, () =>
-  logger.info(`Server is running on port ${env.PORT}`),
+  logger.info(`Server is running on port ${env.PORT}`)
 );
 
 const shutdown = (() => {

@@ -18,9 +18,9 @@ export default {
       logger.info('Disconnected from database');
     } catch (error) {
       logger.error(
-        new Error('Error disconnecting to database', { cause: error }),
+        new Error('Error disconnecting to database', { cause: error })
       );
       throw error;
     }
-  },
+  }
 };

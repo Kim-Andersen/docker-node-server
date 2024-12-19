@@ -7,13 +7,13 @@ const app = express();
 
 app.use(
   morgan(':method :url :status :response-time ms', {
-    stream: { write: (message) => logger.info(message.replace('\n', '')) },
-  }),
+    stream: { write: (message) => logger.info(message.replace('\n', '')) }
+  })
 );
 
 app.get('/', (_req, res) => {
   res.status(200).send({
-    message: `The server is up and running in ${env.ENV} mode`,
+    message: `The server is up and running in ${env.NODE_ENV} mode`
   });
 });
 
